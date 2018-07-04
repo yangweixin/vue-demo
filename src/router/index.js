@@ -6,6 +6,7 @@ import About from '@/views/About.vue'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -18,14 +19,14 @@ export default new Router({
       component: About
     },
     {
-      path: '/top',
-      name: 'top',
+      path: '/user',
+      name: 'user',
       component: () => import('@/views/user'),
       children: [
           {
-            path: 'young',
-            name: 'young',
-            component: () => import('@/views/user/young')
+            path: 'details/:id',
+            name: 'user-details',
+            component: () => import('@/views/user/details')
           }
       ]
     }
