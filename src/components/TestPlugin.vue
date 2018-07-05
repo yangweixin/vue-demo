@@ -1,7 +1,7 @@
 <template>
     <div>
         <input v-model="company" placeholder="新的公司名称"/>
-        <button @click="updateCompanyAsync"> 提交 </button>
+        <button @click="updateCompany"> 提交 </button>
     </div>
 </template>
 
@@ -18,6 +18,7 @@ export default {
     },
     methods: {
         updateCompany: function() {
+            window.HTTP.get('http://www.baidu.com')
             this.$store.commit('updateCompany', this.company)
         },
 

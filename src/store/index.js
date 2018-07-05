@@ -10,11 +10,14 @@ export default new Vuex.Store({
   },
   mutations: {
     updateCompany( state, newName) {
+      console.log(state)
       state.company = newName
     }
   },
   actions: {
     updateCompanyAsync( { commit }, params) {
+      console.log(context)
+      
       setTimeout( () => {
         commit( 'updateCompany', params.company )
       } , 3000)
